@@ -43,7 +43,7 @@ Phone varchar(32),
 primary_Phone Boolean,
 Id_Person Int,
 PRIMARY KEY (Id),
-FOREIGN KEY (Id_Person) REFERENCES Person(Id)
+FOREIGN KEY (Id_Person) REFERENCES person(Id)
 );
 
 CREATE TABLE address
@@ -57,7 +57,7 @@ zip varchar(32),
 primary_address Boolean,
 Id_Person Int,
 PRIMARY KEY (Id),
-FOREIGN KEY (Id_Person) REFERENCES Person(Id)
+FOREIGN KEY (Id_Person) REFERENCES person(Id)
 );
 
 
@@ -67,7 +67,7 @@ Id Int auto_increment,
 Id_Person Int,
 userAgreement Boolean,
 PRIMARY KEY (Id),
-FOREIGN KEY (Id_Person) REFERENCES Person(Id)
+FOREIGN KEY (Id_Person) REFERENCES person(Id)
 );
 
 CREATE TABLE developer
@@ -122,6 +122,7 @@ Create Table page(
     created Date,
     updated Date,
     Id_website int,
+    visits Int,
     PRIMARY KEY (Id),
     FOREIGN KEY (Id_website) REFERENCES Website(id)
 );
