@@ -1,4 +1,4 @@
-
+CREATE DATABASE cs5200_fall2018_sun;
 use cs5200_fall2018_sun;
 #enumeration privilege
 CREATE TABLE privilege
@@ -76,7 +76,7 @@ Id Int auto_increment,
 Id_Person Int,
 developerkey varchar(1024),
 PRIMARY KEY (Id),
-FOREIGN KEY (Id_Person) REFERENCES Person(Id)
+FOREIGN KEY (Id_Person) REFERENCES person(Id)
 );
 
 CREATE TABLE website
@@ -89,7 +89,7 @@ created Date,
 updated Date,
 visits Int,
 PRIMARY KEY (Id),
-FOREIGN KEY (Id_developer) REFERENCES Developer(Id)
+FOREIGN KEY (Id_developer) REFERENCES developer(Id)
 );
 
 CREATE TABLE website_privilege
@@ -99,9 +99,9 @@ Id Int auto_increment,
     Id_website int,
 	privilege char(6) NOT NULL DEFAULT '',
     PRIMARY KEY (Id),
-    FOREIGN KEY (privilege) REFERENCES Privilege(privilege),
-    FOREIGN KEY (Id_website) REFERENCES Website(id),
-    FOREIGN KEY (Id_developer) REFERENCES Developer(Id)
+    FOREIGN KEY (privilege) REFERENCES privilege(privilege),
+    FOREIGN KEY (Id_website) REFERENCES website(id),
+    FOREIGN KEY (Id_developer) REFERENCES developer(Id)
 );
 CREATE TABLE website_role
 (
@@ -111,8 +111,8 @@ CREATE TABLE website_role
 	role char(8) NOT NULL DEFAULT '',
     PRIMARY KEY (Id),
     FOREIGN KEY (role) REFERENCES role(role),
-    FOREIGN KEY (Id_website) REFERENCES Website(id),
-    FOREIGN KEY (Id_developer) REFERENCES Developer(Id)
+    FOREIGN KEY (Id_website) REFERENCES website(id),
+    FOREIGN KEY (Id_developer) REFERENCES developer(Id)
 );
 
 Create Table page(
@@ -124,7 +124,7 @@ Create Table page(
     Id_website int,
     visits Int,
     PRIMARY KEY (Id),
-    FOREIGN KEY (Id_website) REFERENCES Website(id)
+    FOREIGN KEY (Id_website) REFERENCES website(id)
 );
 
 CREATE TABLE page_privilege
@@ -134,9 +134,9 @@ Id Int auto_increment,
     Id_page int,
 	privilege char(6) NOT NULL DEFAULT '',
     PRIMARY KEY (Id),
-    FOREIGN KEY (privilege) REFERENCES Privilege(privilege),
-    FOREIGN KEY (Id_page) REFERENCES Page(id),
-    FOREIGN KEY (Id_developer) REFERENCES Developer(Id)
+    FOREIGN KEY (privilege) REFERENCES privilege(privilege),
+    FOREIGN KEY (Id_page) REFERENCES page(id),
+    FOREIGN KEY (Id_developer) REFERENCES developer(Id)
 );
 CREATE TABLE page_role
 (
@@ -146,8 +146,8 @@ CREATE TABLE page_role
 	role char(8) NOT NULL DEFAULT '',
     PRIMARY KEY (Id),
     FOREIGN KEY (role) REFERENCES role(role),
-    FOREIGN KEY (Id_page) REFERENCES Page(id),
-    FOREIGN KEY (Id_developer) REFERENCES Developer(Id)
+    FOREIGN KEY (Id_page) REFERENCES page(id),
+    FOREIGN KEY (Id_developer) REFERENCES developer(Id)
 );
 CREATE TABLE widget
 (
@@ -168,5 +168,5 @@ CREATE TABLE widget
     shareble Boolean,
     expandable Boolean,
     PRIMARY KEY (Id),
-    FOREIGN KEY (Id_page) REFERENCES Page(id)
+    FOREIGN KEY (Id_page) REFERENCES page(id)
 );
