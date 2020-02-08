@@ -10,4 +10,4 @@ password:123456789
 
 database name :cs5200_fall2018_sun
 
-#the database has run the delect sql
+#the database has run the delete sql so some row of page and website has been delete
