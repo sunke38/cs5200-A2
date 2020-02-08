@@ -1,0 +1,13 @@
+
+
+https://github.com/sunke38/cs5200-A2.git
+
+cs5200-spring2020-sun.clwiyeialsqa.us-east-2.rds.amazonaws.com
+
+username:cs5200
+
+password:123456789
+
+database name :cs5200_fall2018_sun
+
+#the database has run the delect sql
