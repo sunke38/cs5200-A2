@@ -56,6 +56,7 @@ INSERT INTO page (Id,title,description,Id_website,created,updated,visits) VALUES
 
 INSERT INTO page_role (Id_developer,role,Id_page) VALUES ((select Id from developer where Id_Person = (select Id from person where username='alice')),(select role from role where role="editor"),123);
 INSERT INTO page_role (Id_developer,role,Id_page) VALUES ((select Id from developer where Id_Person = (select Id from person where username='bob')),(select role from role where role="reviewer"),123);
+-- INSERT INTO page_role (Id_developer,role,Id_page) VALUES ((select Id from developer where Id_Person = (select Id from person where username='bob')),(select role from role where role="reviewer"),123);
 INSERT INTO page_role (Id_developer,role,Id_page) VALUES ((select Id from developer where Id_Person = (select Id from person where username='charlie')),(select role from role where role="writer"),123);
 
 INSERT INTO page_role (Id_developer,role,Id_page) VALUES ((select Id from developer where Id_Person = (select Id from person where username='bob')),(select role from role where role="editor"),234);
